@@ -1,18 +1,5 @@
-const cards = document.querySelectorAll(".project-card");
-
-cards.forEach((card) => {
-
-  card.addEventListener("mouseenter", () => {
-    card.style.transform = "translateY(-10px)";
-  });
-
-  card.addEventListener("mouseleave", () => {
-    card.style.transform = "translateY(0px)";
-  });
-
-});
-
-/* Fade animation */
+```javascript
+// Fade-in animation
 
 const observer = new IntersectionObserver((entries) => {
 
@@ -24,7 +11,29 @@ const observer = new IntersectionObserver((entries) => {
 
   });
 
+}, {
+  threshold: 0.1
 });
 
-document.querySelectorAll(".project-card, .sidebar, .rightbar")
-.forEach((el) => observer.observe(el));
+document.querySelectorAll(
+  ".sidebar, .project-card, .rightbar"
+).forEach((el) => observer.observe(el));
+
+
+// Hover effect for project cards
+
+document.querySelectorAll(".project-card")
+.forEach((card) => {
+
+  card.addEventListener("mouseenter", () => {
+    card.style.transform =
+      "translateY(-8px)";
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform =
+      "translateY(0px)";
+  });
+
+});
+```
